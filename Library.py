@@ -1,3 +1,5 @@
+import json
+
 class Library:
 
     def __init__(self):
@@ -43,8 +45,15 @@ class Library:
     def list_available_books(self):
         return self.list_of_book
 
-
+    @staticmethod
+    def read_data_json(data_json):
+        with open(data_json) as data:
+            data_string = json.load(data)
+        return data_string
     
+    @staticmethod
+    def add_data_to_json(data_json):
+        pass
 
 
         
