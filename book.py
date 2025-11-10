@@ -4,7 +4,7 @@ class book:
         self.title = title
         self.author = author
         self.ISBN = ISBN
-        self.is_available = is_available
+        self.is_available = True
 
     def __str__(self):
         return f"name of book : {self.title} name of author : {self.author}"
