@@ -39,8 +39,12 @@ class Library:
                  list_available.append(vars(i))
         return list_available
 
-    def search_book(self):
-        pass
+    def search_book(self, input):
+        for book in self.list_of_books:
+            if book.title == input or book.author == input:
+                return vars(book)
+        return "book not found"
+        
     
     @staticmethod
     def read_data_json(data_json):
