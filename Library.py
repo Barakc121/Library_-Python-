@@ -30,8 +30,34 @@ class Library:
     
 
     def return_book(self,user_id, book_isbn):
-        pass
-    
+        user=None
+        book=None
+
+        for u in self.list_of_users:
+            if u ==user_id:
+                user=u
+
+        if user == None:
+                return ""
+        for b in self.list_of_books:
+            if book.is_available==False:
+                book.is_available=True
+                user.borrowed_books.remove(book)
+                return "the book is back"
+            else:
+                return "where is the book"
+
+                
+
+
+
+        for b in self.list_of_books:
+            if b == book_isbn:
+                book_isbn=b
+
+
+
+
     def list_available_books(self):
 
         list_available=[]
