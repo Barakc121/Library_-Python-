@@ -1,5 +1,9 @@
 import json
 
+BOOKS_PATH_JSON = "data/data_books.json"
+
+
+
 class Library:
 
     def __init__(self):
@@ -65,26 +69,17 @@ class Library:
     
     @staticmethod
     def read_data_json(data_json):
-        with open(data_json)as data:
-            data_string=json.load(data)
-        return data_string
+        print(data_json)
+        with open(data_json) as data:
+            return json.load(data)
     
     @staticmethod
-    def add_data_to_json(data_json):
-        pass
-
-    @staticmethod
-    def add_data_of_json(data_json,data):
-        print(data)
-        with open(data_json,"w")as f:
+    def add_data_to_json(data_json,data):
+        with open(data_json,"w") as f:
             json.dump(data, f, indent=4)
+    
 
 
-# if __name__ == '__main__':
-#     name_libar=Library()
 
-#     barak=User("barak",11911)
-#     tora=Book("tiire","bkaa",911)
-#     name_libar.add_book(tora)
-#     print(name_libar.borrow_book(111,11))
-#     print(name_libar.list_available_books())
+
+# print(Library.read_data_json(BOOKS_PATH_JSON))
