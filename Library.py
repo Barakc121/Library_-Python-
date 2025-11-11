@@ -13,26 +13,7 @@ class Library:
         self.list_of_users.append(user)
 
     def borrow_book(self,user_id, book_isbn):
-        user = None
-        book = None
-         
-        for u in self.list_of_users:
-            if u.id == user_id:
-                user = u
-        
-        for b in self.list_of_books:
-            if b.ISBN == book_isbn:
-                book=b
-                if book.is_available:
-                    book.is_available=False
-                    user.borrowed_books.append(book)
-                else: 
-                    print(f"book {book} is unavailable")
-                    return None
-        user = vars(user)
-        user["borrowed_books"] = [vars(b) for b in user["borrowed_books"]]
-        
-        return user,book
+        pass
     
 
     def return_book(self,user_id, book_isbn):
