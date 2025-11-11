@@ -34,12 +34,12 @@ class Library:
         book=None
 
         for u in self.list_of_users:
-            if u ==user_id:
+            if u.id ==user_id:
                 user=u
 
         if user == None:
-                return ""
-        for b in self.list_of_books:
+                return "user anavilable"
+        for book in self.list_of_books:
             if book.is_available==False:
                 book.is_available=True
                 user.borrowed_books.remove(book)
@@ -47,19 +47,9 @@ class Library:
             else:
                 return "where is the book"
 
-                
-
-
-
-        for b in self.list_of_books:
-            if b == book_isbn:
-                book_isbn=b
-
-
 
 
     def list_available_books(self):
-
         list_available=[]
         for i in self.list_of_books:
             if i.is_available == True:
