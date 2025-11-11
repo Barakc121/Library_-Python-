@@ -36,14 +36,12 @@ class Library:
         list_available=[]
         for i in self.list_of_books:
             if i.is_available == True:
-                 list_available.append(i.ISBN)
+                 list_available.append(vars(i))
         return list_available
 
-    def search_book(self,input):
-        for i in [b for b in self.list_of_books if b.is_available == True]:
-            if i.title==input or i.author==input:
-                return f" the book here"        
-            
+    def search_book(self):
+        pass
+    
     @staticmethod
     def read_data_json(data_json):
         with open(data_json)as data:
