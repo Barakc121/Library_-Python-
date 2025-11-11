@@ -13,15 +13,26 @@ class Library:
         self.list_of_users.append(user)
 
     def borrow_book(self,user_id, book_isbn):
-        pass
+        user = ""
+        for i in self.list_of_users:
+            if i.id == user_id:
+                user = i
+        if user == "":
+            return "the user is not exist"
+        for book in self.list_of_books:
+            if book.ISBN == book_isbn:
+                if book.is_available:
+                    book.is_available=False
+                    user.borrowed_books.append(book)
+                else:
+                    return "The book is not available"
+            return "The book is not found"
     
 
     def return_book(self,user_id, book_isbn):
         pass
-
-
+    
     def list_available_books(self):
-        pass
 
         list_available=[]
         for i in self.list_of_books:
